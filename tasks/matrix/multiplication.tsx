@@ -53,7 +53,18 @@ export default class Multiplication extends React.Component<{}, IMultiplicationS
       return alert('Entered data wrong. Check this.');
     } else if (e.keyCode === 13 && !!firstArray.length && this.firstIntermArray.length && this.secondIntermArray.length) {
       this.pasteValue();
-    }    
+    }
+
+    if(e.keyCode === 27 && result.length) {
+      this.setState({
+        result: [],
+      });
+    } else if (e.keyCode === 27 && !result.length && !!firstArray.length) {
+      this.setState({
+        firstArray: [],
+        secondArray: [],
+      });
+    }
   }
 
   componentDidMount() {
@@ -107,8 +118,9 @@ export default class Multiplication extends React.Component<{}, IMultiplicationS
 
     return(
       <div className="container_with_multiplication">
+        <h2 className="font_black">Fill matrix and press Enter or press Esc for back</h2>
         <Matrix id="first_matrix" defaultValue={firstArray} onChange={this.onChangeMatrix} />
-        <p className="equals" onClick={this.pasteValue}>+</p>
+        <p className="equals">+</p>
         <Matrix id="second_matrix" defaultValue={secondArray} onChange={this.onChangeMatrix}/>
         <p className="equals" onClick={this.pasteValue}>=</p>
         {result.length && <Matrix defaultValue={result} disabled={true} />}
@@ -134,31 +146,35 @@ export default class Multiplication extends React.Component<{}, IMultiplicationS
 
     return (
       <React.Fragment>
-        <p className="font_black">Enter matrix notefications and press Enter</p>
-        <div>
-          <p className="font_black">First matrix</p>
+        <h2 className="font_black">Enter matrix notefications and press Enter</h2>
+        <div >
+          <h4 className="font_black">First matrix</h4>
           <input
             id="first_row" 
+            className="start_input"
             onChange={this.onChangeInput}
             placeholder="Row"
             value={row ? row : ''}
           />
           <input 
+            className="start_input"
             id="first_column" 
             placeholder="Column"
             onChange={this.onChangeInput}
             value={column ? column : ''}
           />
-        </div>  
+        </div>
         <div>
-          <p className="font_black">Second matrix</p>
+          <h4 className="font_black">Second matrix</h4>
           <input
+            className="start_input"
             id="second_row" 
             placeholder="Row"
             onChange={this.onChangeInput}
             value={column ? column : ''}
           />
           <input
+            className="start_input"
             id="second_column" 
             placeholder="Column"
             onChange={this.onChangeInput}

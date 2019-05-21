@@ -18,7 +18,8 @@
 
 .workspace
   height: 100%
-  width: calc(100% - 300px)      
+  width: calc(100% - 300px)
+  overflow: auto     
 
 .equals
   display: inline-block
@@ -31,15 +32,16 @@
   &:hover
     opacity: 0.7
 
+.multiplication_main
+  min-width: 700px
+  padding: 20px
+  .start_input
+    display: block
+    margin-bottom: 2px
+    padding: 0 5px
+
 .container_with_multiplication
   display: inline-block
-  margin: 60px
-  &:before
-    content: ''
-    display: inline-block
-    vertical-align: middle
-    height: 100%
-    width: 0px
 
 .first_matrix_multiplier
   vertical-align: middle
@@ -55,6 +57,7 @@
   vertical-align: middle
   position: relative
   font-size: 0px
+  margin: 10px 0
   .row
     display: inline-block
     border-width: 0px 1px 0px 0px
