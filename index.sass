@@ -1,0 +1,100 @@
+.r_menu
+  height: 100%
+  width: 300px
+  padding: 60px 10px 30px 20px
+
+.window
+  position: relative  
+  overflow: hidden
+  height: 100%
+  width: 100%
+  display: flex
+
+.menu_link
+  color: white
+  text-decoration: none
+  &:hover
+    opacity: 0.7
+
+.workspace
+  height: 100%
+  width: calc(100% - 300px)      
+
+.equals
+  display: inline-block
+  vertical-align: middle
+  margin: 0px 20px
+  font-size: 34px
+  color: black
+  cursor: pointer
+  transition: opacity 0.3s
+  &:hover
+    opacity: 0.7
+
+.container_with_multiplication
+  display: inline-block
+  margin: 60px
+  &:before
+    content: ''
+    display: inline-block
+    vertical-align: middle
+    height: 100%
+    width: 0px
+
+.first_matrix_multiplier
+  vertical-align: middle
+
+.second_matrix_multiplier
+  vertical-align: middle
+
+.resoult_matrix_multiplier
+  vertical-align: middle
+
+.matrix
+  display: inline-block
+  vertical-align: middle
+  position: relative
+  font-size: 0px
+  .row
+    display: inline-block
+    border-width: 0px 1px 0px 0px
+    &:last-child
+      border-width: 0px
+  .input
+    display: block
+    width: 50px
+    height: 20px
+    text-align: center
+    font-size: 12px
+    border-width: 0px 0px 1px 0px
+    &:last-child
+      border-width: 0px
+  .custom_border
+    position: absolute
+    width: 25%
+    height: 25%
+    &:nth-child(1)
+      top: -3px
+      left: -3px
+    &:nth-child(2)
+      top: -3px
+      right: -3px
+    &:nth-child(3)
+      right: -3px
+      bottom: -3px
+    &:nth-child(4)
+      bottom: -3px
+      left: -3px
+  .inner_value
+    position: relative
+    z-index: 2
+    
+
+
+  
+
+  
+
+
+
+
